@@ -1,4 +1,4 @@
 package com.example.BusStation.service;
 
-public class LineService {
+public interface LineService {
 }
