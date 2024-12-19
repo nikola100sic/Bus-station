@@ -1,6 +1,5 @@
 package com.example.BusStation.model;
 
-import com.example.BusStation.config.SecurityConfig;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

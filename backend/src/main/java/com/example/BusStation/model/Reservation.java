@@ -1,12 +1,10 @@
 package com.example.BusStation.model;
 
-import com.example.BusStation.enumeration.UserRole;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
