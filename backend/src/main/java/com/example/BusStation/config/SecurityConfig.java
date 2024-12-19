@@ -77,7 +77,6 @@ public class SecurityConfig {
                             }
                         })
                         .authenticationEntryPoint(new AuthenticationEntryPoint() {
-
                             @Override
                             public void commence(HttpServletRequest request, HttpServletResponse response,
                                                  AuthenticationException authException) throws IOException, ServletException {
