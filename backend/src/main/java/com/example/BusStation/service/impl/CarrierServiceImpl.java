@@ -29,25 +29,4 @@ public class CarrierServiceImpl implements CarrierService {
     public Carrier save(Carrier carrier) {
         return carrierRepository.save(carrier);
     }
-
-    @Override
-    public Carrier update(Carrier carrier) {
-        if (carrier == null || carrier.getId() == null) {
-            throw new IllegalArgumentException("Carrier or Carrier ID must not be null.");
-        }
-        Carrier existingCarrier = carrierRepository.findById(carrier.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Carrier with ID " + carrier.getId() + " not found."));
-        return carrierRepository.save(carrier);
-    }
-
-    @Override
-    public Carrier delete(Long id) {
-        if (id == null) {
-            throw new IllegalArgumentException("ID must not be null.");
-        }
-        Carrier carrier = carrierRepository.findById(id).orElseThrow(() ->
-                new EntityNotFoundException("Carrier with ID: " + id + " not found"));
-        carrierRepository.delete(carrier);
-        return carrier;
-    }
 }
