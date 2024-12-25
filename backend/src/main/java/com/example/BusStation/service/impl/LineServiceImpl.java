@@ -69,7 +69,6 @@ public class LineServiceImpl implements LineService {
             dto.setDeparture(line.getDeparture());
             dto.setDestination(line.getDestination());
             dto.setDepartureTime(line.getDepartureTime());
-            dto.setArrivalTime(line.getArrivalTime());
             dto.setPrice(line.getPrice());
 
             Set<CarrierDTO> carrierDTOs = line.getCarriers().stream()
