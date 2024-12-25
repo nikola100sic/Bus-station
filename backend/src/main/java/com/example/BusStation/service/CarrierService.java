@@ -12,7 +12,5 @@ public interface CarrierService {
 
     Carrier save(Carrier carrier);
 
-    Carrier update(Carrier carrier);
 
-    Carrier delete(Long id);
 }
