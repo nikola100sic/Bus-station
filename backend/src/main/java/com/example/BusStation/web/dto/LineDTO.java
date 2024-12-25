@@ -19,9 +19,8 @@ public class LineDTO {
 
     private LocalDateTime departureTime;
 
-    private LocalDateTime arrivalTime;
 
     private BigDecimal price;
-    
+
     private Set<CarrierDTO> carriers;
 }
