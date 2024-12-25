@@ -5,6 +5,7 @@ INSERT INTO `busstation`.`user` (`id`, `name`,`surname`,`e_mail`,`password`, `us
 INSERT INTO `busstation`.`carrier` (`id`, `address`, `e_mail`, `name`, `phone_number`) VALUES ('1', 'Novosadska 11', 'novisadtravel@ns.com', 'Novi Sad Travel', '018023945');
 INSERT INTO `busstation`.`carrier` (`id`, `address`, `e_mail`, `name`, `phone_number`) VALUES ('2', 'Trg Slobode 2', 'jeremicTravel@jt.com', 'Jeremic Travel', '021848293');
 INSERT INTO `busstation`.`carrier` (`id`, `address`, `e_mail`, `name`, `phone_number`) VALUES ('3', 'Njegoseva 22', 'nisexpress@ne.com', 'Nis express', '0238475983');
+INSERT INTO `busstation`.`carrier` (`id`, `address`, `e_mail`, `name`, `phone_number`) VALUES ('4', 'Durmitorska 1', 'cityexpres@ce.com', 'City express', '013940983');
 
 INSERT INTO `busstation`.`bus` (`capacity`, `carrier_id`, `id`, `plate_number`) VALUES ('15', '1', '1', 'NI-260-NE');
 INSERT INTO `busstation`.`bus` (`capacity`, `carrier_id`, `id`, `plate_number`) VALUES ('20', '1', '2', 'NI-240-KK');
@@ -26,7 +27,7 @@ INSERT INTO `busstation`.`line_bus` (`bus_id`, `line_id`) VALUES ('4', '4');
 INSERT INTO `busstation`.`line_bus` (`bus_id`, `line_id`) VALUES ('2', '5');
 INSERT INTO `busstation`.`line_bus` (`bus_id`, `line_id`) VALUES ('1', '6');
 
-INSERT INTO `busstation`.`line_carrier` (`carrier_id`, `line_id`) VALUES ('1', '1');
+INSERT INTO `busstation`.`line_carrier` (`carrier_id`, `line_id`) VALUES ('4', '1');
 INSERT INTO `busstation`.`line_carrier` (`carrier_id`, `line_id`) VALUES ('2', '2');
 INSERT INTO `busstation`.`line_carrier` (`carrier_id`, `line_id`) VALUES ('3', '3');
 INSERT INTO `busstation`.`line_carrier` (`carrier_id`, `line_id`) VALUES ('3', '4');

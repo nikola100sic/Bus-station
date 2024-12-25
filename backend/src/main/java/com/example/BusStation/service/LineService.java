@@ -1,14 +1,15 @@
 package com.example.BusStation.service;
 
 import com.example.BusStation.model.Line;
+import com.example.BusStation.web.dto.LineDTO;
 
 import java.util.List;
 
 public interface LineService {
 
-    Line getOne(Long id);
+    LineDTO getOne(Long id);
 
-    List<Line> getAll();
+    List<LineDTO> getAll();
 
     Line save(Line line);
 

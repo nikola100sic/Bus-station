@@ -1,5 +1,6 @@
 package com.example.BusStation.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,10 +28,9 @@ public class Carrier {
     @Column(nullable = false, unique = true)
     private String eMail;
 
-    @OneToMany(mappedBy = "carrier")
-    private Set<Bus> buses;
 
     @ManyToMany(mappedBy = "carriers")
+    @JsonBackReference
     private Set<Line> lines;
 
 }

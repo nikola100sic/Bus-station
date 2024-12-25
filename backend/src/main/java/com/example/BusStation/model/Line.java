@@ -1,5 +1,6 @@
 package com.example.BusStation.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,14 +33,11 @@ public class Line {
     @Column(nullable = false)
     private BigDecimal price;
 
-    @ManyToMany
-    @JoinTable(name = "line_bus", joinColumns = @JoinColumn(name = "line_id"),
-            inverseJoinColumns = @JoinColumn(name = "bus_id"))
-    private Set<Bus> buses;
 
     @ManyToMany
     @JoinTable(name = "line_carrier", joinColumns = @JoinColumn(name = "line_id"),
             inverseJoinColumns = @JoinColumn(name = "carrier_id"))
+    @JsonManagedReference
     private Set<Carrier> carriers;
 
 }
