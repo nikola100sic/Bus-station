@@ -28,7 +28,7 @@ public class Line {
     private LocalDateTime departureTime;
 
     @Column(nullable = false)
-    private LocalDateTime arrivalTime;
+    private int numberOfSeats;
 
     @Column(nullable = false)
     private BigDecimal price;
