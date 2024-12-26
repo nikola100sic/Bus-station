@@ -1,13 +1,12 @@
 package com.example.BusStation.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -33,11 +32,9 @@ public class Line {
     @Column(nullable = false)
     private BigDecimal price;
 
-
     @ManyToMany
     @JoinTable(name = "line_carrier", joinColumns = @JoinColumn(name = "line_id"),
             inverseJoinColumns = @JoinColumn(name = "carrier_id"))
-    @JsonManagedReference
-    private Set<Carrier> carriers;
-
+    private List<Carrier> carriers;
+    
 }
