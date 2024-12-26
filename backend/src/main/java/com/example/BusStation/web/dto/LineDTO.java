@@ -19,6 +19,7 @@ public class LineDTO {
 
     private LocalDateTime departureTime;
 
+    private int numberOfSeats;
 
     private BigDecimal price;
 
