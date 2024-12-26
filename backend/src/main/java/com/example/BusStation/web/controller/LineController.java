@@ -27,8 +27,8 @@ public class LineController {
     }
 
     @PostMapping
-    public ResponseEntity<Line> save(@RequestBody Line line) {
-        Line savedLine = lineService.save(line);
-        return new ResponseEntity<>(line, HttpStatus.OK);
+    public ResponseEntity<LineDTO> save(@RequestBody Line line) {
+        LineDTO savedLine = lineService.save(line);
+        return new ResponseEntity<>(savedLine, HttpStatus.OK);
     }
 }
