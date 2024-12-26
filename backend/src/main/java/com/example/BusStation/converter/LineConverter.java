@@ -10,12 +10,13 @@ import java.util.stream.Collectors;
 
 @Component
 public class LineConverter {
-    
+
     public LineDTO toDto(Line line) {
         LineDTO dto = new LineDTO();
         dto.setId(line.getId());
         dto.setDeparture(line.getDeparture());
         dto.setDestination(line.getDestination());
+        dto.setNumberOfSeats(line.getNumberOfSeats());
         dto.setDepartureTime(line.getDepartureTime());
         dto.setPrice(line.getPrice());
         dto.setCarriers(line.getCarriers()
