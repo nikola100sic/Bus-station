@@ -1,12 +1,11 @@
 package com.example.BusStation.service.impl;
 
-import com.example.BusStation.converter.LineMapper;
+import com.example.BusStation.converter.LineConverter;
 import com.example.BusStation.model.Line;
 import com.example.BusStation.repository.LineRepository;
 import com.example.BusStation.service.LineService;
 import com.example.BusStation.web.dto.LineDTO;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,22 +18,20 @@ public class LineServiceImpl implements LineService {
 
     private final LineRepository lineRepository;
 
-    private final LineMapper lineMapper;
+    private final LineConverter lineConverter;
 
     @Override
-    @Transactional
     public LineDTO getOne(Long id) {
         Line line = lineRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Entity with ID " + id + " not found"));
-        return lineMapper.toDto(line);
+        return lineConverter.toDto(line);
     }
 
     @Override
-    @Transactional
     public List<LineDTO> getAll() {
         return lineRepository.findAll()
                 .stream()
-                .map(lineMapper::toDto)
+                .map(lineConverter::toDto)
                 .collect(Collectors.toList());
     }
 
