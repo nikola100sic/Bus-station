@@ -11,7 +11,7 @@ public interface LineService {
 
     List<LineDTO> getAll();
 
-    Line save(Line line);
+    LineDTO save(Line line);
 
     Line update(Line line);
 
