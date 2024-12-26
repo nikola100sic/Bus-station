@@ -36,8 +36,9 @@ public class LineServiceImpl implements LineService {
     }
 
     @Override
-    public Line save(Line line) {
-        return lineRepository.save(line);
+    public LineDTO save(Line line) {
+        Line savedLine = lineRepository.save(line);
+        return lineConverter.toDto(savedLine);
     }
 
     @Override
