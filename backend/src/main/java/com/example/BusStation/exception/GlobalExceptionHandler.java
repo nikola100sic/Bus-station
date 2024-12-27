@@ -1,6 +1,8 @@
 package com.example.BusStation.exception;
 
 
+import com.example.BusStation.exception.lines.InvalidLineException;
+import com.example.BusStation.exception.lines.LineNotFoundException;
 import com.example.BusStation.exception.users.InvalidCredentialsException;
 import com.example.BusStation.exception.users.NotVerifiedAccountException;
 import com.example.BusStation.exception.users.PasswordMismatchException;
@@ -34,8 +36,16 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(LineNotFoundException.class)
+    public ResponseEntity<String> handleEntityNotFoundException(LineNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
 
-
+    @ExceptionHandler(InvalidLineException.class)
+    public ResponseEntity<String> handleInvalidLineException(InvalidLineException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+    
     @ExceptionHandler(value = DataIntegrityViolationException.class)
     public ResponseEntity<Void> handle() {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
