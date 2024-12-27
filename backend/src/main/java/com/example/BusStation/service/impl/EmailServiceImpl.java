@@ -30,14 +30,5 @@ public class EmailServiceImpl implements EmailService {
             throw new IllegalStateException("Failed to send email", e);
         }
     }
-
-
-//        SimpleMailMessage message = new SimpleMailMessage();
-//        message.setFrom("noreply@nidza.com");
-//        message.setTo(to);
-//        message.setSubject(subject);
-//        message.setText(body, true);
-//        mailSender.send(message);
-//    }
 }
 
