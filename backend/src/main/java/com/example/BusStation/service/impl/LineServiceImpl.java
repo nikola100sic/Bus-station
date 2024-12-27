@@ -8,6 +8,7 @@ import com.example.BusStation.repository.LineRepository;
 import com.example.BusStation.service.LineService;
 import com.example.BusStation.web.dto.LineDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,6 +31,14 @@ public class LineServiceImpl implements LineService {
     @Override
     public List<LineDTO> getAll() {
         return lineRepository.findAll()
+                .stream()
+                .map(lineConverter::toDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<LineDTO> search(Long carrierId, String destination, Integer maxPrice, int pageNo) {
+        return lineRepository.searchLines(carrierId, destination, maxPrice, PageRequest.of(pageNo, 1))
                 .stream()
                 .map(lineConverter::toDto)
                 .collect(Collectors.toList());
