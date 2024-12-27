@@ -13,7 +13,7 @@ public interface LineService {
 
     LineDTO save(Line line);
 
-    Line update(Line line);
+    LineDTO update(Line line, Long id);
 
-    Line delete(Long id);
+    void delete(Long id);
 }
