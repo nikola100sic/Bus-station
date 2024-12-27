@@ -1,11 +1,12 @@
 package com.example.BusStation.service.impl;
 
 import com.example.BusStation.converter.LineConverter;
+import com.example.BusStation.exception.lines.InvalidLineException;
+import com.example.BusStation.exception.lines.LineNotFoundException;
 import com.example.BusStation.model.Line;
 import com.example.BusStation.repository.LineRepository;
 import com.example.BusStation.service.LineService;
 import com.example.BusStation.web.dto.LineDTO;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +23,7 @@ public class LineServiceImpl implements LineService {
 
     @Override
     public LineDTO getOne(Long id) {
-        Line line = lineRepository.findById(id).orElseThrow(() ->
-                new EntityNotFoundException("Entity with ID " + id + " not found"));
+        Line line = lineRepository.findById(id).orElseThrow(() -> new LineNotFoundException(id));
         return lineConverter.toDto(line);
     }
 
@@ -42,23 +42,23 @@ public class LineServiceImpl implements LineService {
     }
 
     @Override
-    public Line update(Line line) {
-        if (line == null || line.getId() == null) {
-            throw new IllegalArgumentException("Line or Line ID must not be null.");
+    public LineDTO update(Line line, Long id) {
+        if (line == null || line.getId() == null || !line.getId().equals(id)) {
+            throw new InvalidLineException("Invalid Line data: Line ID must not be null and must match the path ID.");
         }
-        Line existingLine = lineRepository.findById(line.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Line with ID " + line.getId() + " not found."));
-        return lineRepository.save(line);
+        Line existingLine = lineRepository.findById(id)
+                .orElseThrow(() -> new LineNotFoundException(id));
+        lineRepository.save(line);
+        return lineConverter.toDto(line);
     }
 
     @Override
-    public Line delete(Long id) {
+    public void delete(Long id) {
         if (id == null) {
             throw new IllegalArgumentException("ID must not be null.");
         }
         Line line = lineRepository.findById(id).orElseThrow(() ->
-                new EntityNotFoundException("Line with ID: " + id + " not found"));
+                new LineNotFoundException(id));
         lineRepository.delete(line);
-        return line;
     }
 }
