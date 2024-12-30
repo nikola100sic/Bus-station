@@ -9,10 +9,10 @@ import {
 } from "./Header.styled";
 import { Link } from "react-router-dom";
 import { FaUser, FaUserLarge, FaUserPlus } from "react-icons/fa6";
-import AuthUtil from "../../../utils/authUtil";
 import Button from "../button/Button";
+import AuthUtil from "../../../utils/authUtil";
 
-const Header = (brandName, navItems) => {
+const Header = ({ brandName, navItems }) => {
   const token = localStorage.getItem("jwt");
   const { username } = AuthUtil();
 
