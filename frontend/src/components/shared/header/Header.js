@@ -9,9 +9,12 @@ import {
 } from "./Header.styled";
 import { Link } from "react-router-dom";
 import { FaUser, FaUserLarge, FaUserPlus } from "react-icons/fa6";
+import AuthUtil from "../../../utils/authUtil";
+import Button from "../button/Button";
 
 const Header = (brandName, navItems) => {
   const token = localStorage.getItem("jwt");
+  const { username } = AuthUtil();
 
   const handleLogout = () => {
     localStorage.removeItem("jwt");
@@ -46,8 +49,18 @@ const Header = (brandName, navItems) => {
       </StyledLinksWrapper>
       <StyledRegistrationLoginWrapper>
         {token ? (
-          //TODO ADD!
-          <></>
+          <>
+            <StyledLogoutWrapper>
+              <FaUserLarge />
+              <Link
+                to={`/account/${username}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {"Hi, " + username}
+              </Link>
+            </StyledLogoutWrapper>
+            <Button text="Logout" onClick={handleLogout} color="#00bcf7" />
+          </>
         ) : (
           <>
             <StyledLinks to={"/login"}>
