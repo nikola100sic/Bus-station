@@ -14,6 +14,11 @@ const NAVITEMS = [
     path: "/lines",
     requiresAuth: false,
   },
+  {
+    title: "Carriers",
+    path: "/carriers",
+    requiresAuth: false,
+  },
 ];
 const Layout = ({ children }) => {
   const token = localStorage.getItem("jwt");
@@ -25,7 +30,7 @@ const Layout = ({ children }) => {
     <StyledPageContainer>
       <Header brandName="Bus station" navItems={filteredNavItems}></Header>
       <Content>{children}</Content>
-      <Footer text="© 2025 Bus station. All rights reserved. | Made by Nikola"></Footer>
+      <Footer text="© 2025 Bus station app. All rights reserved. | Made by Nikola"></Footer>
     </StyledPageContainer>
   );
 };
