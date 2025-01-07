@@ -59,7 +59,7 @@ const Header = ({ brandName, navItems }) => {
                 {"Hi, " + username}
               </Link>
             </StyledLogoutWrapper>
-            <Button text="Logout" onClick={handleLogout} color="#00bcf7" />
+            <Button text="Logout" onClick={handleLogout} color="#e48306" />
           </>
         ) : (
           <>
