@@ -9,7 +9,7 @@ import {
 } from "../../components/shared/forms/Forms.styled";
 import Button from "../../components/shared/button/Button";
 import { toast } from "react-toastify";
-import AuthUtil from "../../utils/authUtil";
+import { AuthAxios } from "../../components/api/axios";
 
 const LoginPage = () => {
   const [user, setUser] = useState({
@@ -34,7 +34,7 @@ const LoginPage = () => {
       return;
     }
     try {
-      const resp = await AuthUtil.post("/login", user);
+      const resp = await AuthAxios.post("/login", user);
       window.localStorage.setItem("jwt", resp.data);
       window.location.replace("/home");
       toast.success("Login successful!");
