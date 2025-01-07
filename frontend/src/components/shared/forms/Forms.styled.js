@@ -29,3 +29,17 @@ export const AuthFormInput = styled.input`
     font-style: italic;
   }
 `;
+
+export const FormLabel = styled.label`
+  display: block;
+  margin: 10px 0 5px;
+  color: #ffffff;
+  font-size: large;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 58px;
+  justify-content: center;
+  margin-top: 20px;
+`;
