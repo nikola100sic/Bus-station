@@ -3,6 +3,7 @@ import Layout from "./components/shared/layout/Layout";
 import Home from "./pages/home/Home";
 import LoginPage from "./pages/auth/LoginPage";
 import { ToastContainer } from "react-toastify";
+import RegistrationPage from "./pages/auth/RegistrationPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/registration" element={<RegistrationPage />} />
         </Routes>
       </Layout>
       <ToastContainer
