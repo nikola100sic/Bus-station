@@ -43,3 +43,14 @@ export const ButtonContainer = styled.div`
   justify-content: center;
   margin-top: 20px;
 `;
+
+export const CheckboxInput = styled.input`
+  margin-right: 10px;
+  cursor: pointer;
+  transform: scale(1.4);
+`;
+
+export const Label = styled.span`
+  font-size: 15px;
+  font-weight: bold;
+`;
