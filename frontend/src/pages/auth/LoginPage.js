@@ -48,29 +48,31 @@ const LoginPage = () => {
     <AuthFormContainer>
       <AuthFormTitle>Login</AuthFormTitle>
       <FormLabel>Username: </FormLabel>
-      <AuthFormInput
-        type="text"
-        placeholder="Enter your username"
-        name="username"
-        onChange={handleChange}
-        value={user.username}
-      />
-      <FormLabel>Password: </FormLabel>
-      <AuthFormInput
-        type="password"
-        placeholder="Enter your password"
-        name="password"
-        onChange={handleChange}
-        value={user.password}
-      />
-      <ButtonContainer>
-        <Button text="Login" type="submit" />
-        <Button
-          text="Create acount"
-          type="submit"
-          onClick={() => navigate("/registration")}
+      <form onSubmit={handleSubmit}>
+        <AuthFormInput
+          type="text"
+          placeholder="Enter your username"
+          name="username"
+          onChange={handleChange}
+          value={user.username}
         />
-      </ButtonContainer>
+        <FormLabel>Password: </FormLabel>
+        <AuthFormInput
+          type="password"
+          placeholder="Enter your password"
+          name="password"
+          onChange={handleChange}
+          value={user.password}
+        />
+        <ButtonContainer>
+          <Button text="Login" type="submit" />
+          <Button
+            text="Create acount"
+            type="submit"
+            onClick={() => navigate("/registration")}
+          />
+        </ButtonContainer>
+      </form>
     </AuthFormContainer>
   );
 };
