@@ -1,7 +1,15 @@
 import React from "react";
 import { StyledButton, SubmitButton } from "./Button.styled";
 
-const Button = (text, onClick, variant, type, color, textColor, disabled) => {
+const Button = ({
+  text,
+  onClick,
+  variant,
+  type,
+  color,
+  textColor,
+  disabled,
+}) => {
   return (
     <>
       {type === "submit" ? (
