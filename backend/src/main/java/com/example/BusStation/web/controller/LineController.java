@@ -24,8 +24,9 @@ public class LineController {
     public ResponseEntity<List<LineDTO>> getAll(@RequestParam(required = false) Long carrierId,
                                                 @RequestParam(required = false) String destination,
                                                 @RequestParam(required = false) Integer maxPrice,
+                                                @RequestParam(required = false) Integer minPrice,
                                                 @RequestParam(value = "pageNo", defaultValue = "0") int pageNo) {
-        List<LineDTO> lines = lineService.search(carrierId, destination, maxPrice, pageNo);
+        List<LineDTO> lines = lineService.search(carrierId, destination, minPrice, maxPrice, pageNo);
         return new ResponseEntity<>(lines, HttpStatus.OK);
     }
 
