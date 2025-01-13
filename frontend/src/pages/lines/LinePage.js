@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { BusStationAxios } from "../../components/api/axios";
 import lineServiceAxios from "../../components/api/line.service.axios";
 
 const LinePage = () => {
@@ -15,7 +14,7 @@ const LinePage = () => {
       setLines(res.data);
       console.log(res.data);
     } catch (error) {
-      console.error("Greška pri učitavanju linija:", error);
+      console.error("Error", error);
     }
   };
 
