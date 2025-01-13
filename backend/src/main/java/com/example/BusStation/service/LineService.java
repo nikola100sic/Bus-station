@@ -11,7 +11,7 @@ public interface LineService {
 
     List<LineDTO> getAll();
 
-    List<LineDTO> search(Long carrierId, String destination, Integer maxPrice, Integer minPrice, int pageNo);
+    List<LineDTO> search(Long carrierId, String destination, String departure, Integer maxPrice, Integer minPrice, int pageNo);
 
     LineDTO save(Line line);
 
