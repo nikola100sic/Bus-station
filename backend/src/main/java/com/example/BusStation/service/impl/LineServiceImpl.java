@@ -38,7 +38,7 @@ public class LineServiceImpl implements LineService {
 
     @Override
     public List<LineDTO> search(Long carrierId, String destination, Integer maxPrice, int pageNo) {
-        return lineRepository.searchLines(carrierId, destination, maxPrice, PageRequest.of(pageNo, 1))
+        return lineRepository.searchLines(carrierId, destination, maxPrice, PageRequest.of(pageNo, 5))
                 .stream()
                 .map(lineConverter::toDto)
                 .collect(Collectors.toList());
