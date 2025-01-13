@@ -23,10 +23,11 @@ public class LineController {
     @GetMapping
     public ResponseEntity<List<LineDTO>> getAll(@RequestParam(required = false) Long carrierId,
                                                 @RequestParam(required = false) String destination,
+                                                @RequestParam(required = false) String departure,
                                                 @RequestParam(required = false) Integer maxPrice,
                                                 @RequestParam(required = false) Integer minPrice,
                                                 @RequestParam(value = "pageNo", defaultValue = "0") int pageNo) {
-        List<LineDTO> lines = lineService.search(carrierId, destination, minPrice, maxPrice, pageNo);
+        List<LineDTO> lines = lineService.search(carrierId, destination, departure, minPrice, maxPrice, pageNo);
         return new ResponseEntity<>(lines, HttpStatus.OK);
     }
 
