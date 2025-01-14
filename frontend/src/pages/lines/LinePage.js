@@ -8,6 +8,8 @@ import {
   SearchInput,
   SearchParamsStyled,
 } from "./LinePage.styled";
+import Button from "../../components/shared/button/Button";
+import { ButtonContainer } from "../../components/shared/forms/Forms.styled";
 
 const LinePage = () => {
   const [lines, setLines] = useState(null);
@@ -50,13 +52,16 @@ const LinePage = () => {
         <InputRow>
           <InputGroup>
             <FormLabel>Min price:</FormLabel>
-            <SearchInput placeholder="Min price" />
+            <SearchInput placeholder="Enter min price" />
           </InputGroup>
           <InputGroup>
             <FormLabel>Max price:</FormLabel>
-            <SearchInput placeholder="Max price" />
+            <SearchInput placeholder="Enter max price" />
           </InputGroup>
         </InputRow>
+        <ButtonContainer>
+          <Button text="Search" color="#f1c40f8a"></Button>
+        </ButtonContainer>
       </SearchParamsStyled>
     </LinePageStyled>
   );
