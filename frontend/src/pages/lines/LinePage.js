@@ -51,11 +51,11 @@ const LinePage = () => {
         </InputRow>
         <InputRow>
           <InputGroup>
-            <FormLabel>Min price:</FormLabel>
+            <FormLabel>Minimum price:</FormLabel>
             <SearchInput placeholder="Enter min price" />
           </InputGroup>
           <InputGroup>
-            <FormLabel>Max price:</FormLabel>
+            <FormLabel>Maximum price:</FormLabel>
             <SearchInput placeholder="Enter max price" />
           </InputGroup>
         </InputRow>
