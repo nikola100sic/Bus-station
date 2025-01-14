@@ -27,15 +27,17 @@ public class LineController {
                                                 @RequestParam(required = false) Integer maxPrice,
                                                 @RequestParam(required = false) Integer minPrice,
                                                 @RequestParam(value = "pageNo", required = false, defaultValue = "0") int pageNo) {
-        if (carrierId == null && (destination == null || destination.isBlank()) &&
-                (departure == null || departure.isBlank()) &&
-                maxPrice == null && minPrice == null) {
+        if (carrierId == null
+                && (destination == null || destination.isBlank())
+                && (departure == null || departure.isBlank())
+                && maxPrice == null
+                && minPrice == null) {
             return new ResponseEntity<>(List.of(), HttpStatus.OK);
         }
         List<LineDTO> lines = lineService.search(carrierId, destination, departure, minPrice, maxPrice, pageNo);
         return new ResponseEntity<>(lines, HttpStatus.OK);
     }
-    
+
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     @GetMapping("/{id}")
     public ResponseEntity<LineDTO> getOne(@PathVariable Long id) {
