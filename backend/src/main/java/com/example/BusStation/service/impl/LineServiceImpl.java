@@ -7,10 +7,12 @@ import com.example.BusStation.model.Line;
 import com.example.BusStation.repository.LineRepository;
 import com.example.BusStation.service.LineService;
 import com.example.BusStation.web.dto.LineDTO;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,8 +39,8 @@ public class LineServiceImpl implements LineService {
     }
 
     @Override
-    public List<LineDTO> search(Long carrierId, String destination, String departure, Integer minPrice, Integer maxPrice, int pageNo) {
-        return lineRepository.searchLines(carrierId, destination, departure, minPrice, maxPrice, PageRequest.of(pageNo, 5))
+    public List<LineDTO> search(LocalDateTime date, String destination, String departure, Integer maxPrice, Integer minPrice, int pageNo) {
+        return lineRepository.searchLines(date, destination, departure, minPrice, maxPrice, PageRequest.of(pageNo, 5))
                 .stream()
                 .map(lineConverter::toDto)
                 .collect(Collectors.toList());
