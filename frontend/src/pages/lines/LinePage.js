@@ -100,6 +100,7 @@ const LinePage = () => {
             <SearchInput
               placeholder="Enter min price"
               name="minPrice"
+              type="number"
               value={searchParams.minPrice}
               onChange={handleInputChange}
             />
@@ -109,6 +110,7 @@ const LinePage = () => {
             <SearchInput
               placeholder="Enter max price"
               name="maxPrice"
+              type="number"
               value={searchParams.maxPrice}
               onChange={handleInputChange}
             />
