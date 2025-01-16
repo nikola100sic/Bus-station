@@ -1,29 +1,11 @@
 import styled from "styled-components";
 
 export const LinePageStyled = styled.div`
-  /* position: relative; */
   width: 100%;
-  /* min-height: calc(100vh - 120px); */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  /* padding: 20px; */
-  overflow: hidden;
-  align-items: flex-start;
-
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(/bus.jpg);
-    background-size: cover;
-    background-position: center;
-    filter: blur(2px);
-    z-index: -1;
-  }
 `;
 
 export const SearchParamsStyled = styled.div`
@@ -34,9 +16,8 @@ export const SearchParamsStyled = styled.div`
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(5px);
-  display: flex;
   flex-direction: column;
-  /* width: 60%; */
+  margin-bottom: 40px;
 `;
 
 export const InputRow = styled.div`
@@ -50,11 +31,9 @@ export const InputRow = styled.div`
 export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
 `;
 
 export const SearchInput = styled.input`
-  /* width: 100%; */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -70,4 +49,22 @@ export const FormLabel = styled.label`
   margin-bottom: 5px;
   color: rgb(0, 0, 0);
   font-size: large;
+`;
+
+export const DataViewContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+`;
+
+export const LineCard = styled.div`
+  display: flex;
+  background-color: #b3a02bb5;
+  gap: 10px;
+  color: snow;
+  border-radius: 15px;
+  padding: 15px;
 `;
