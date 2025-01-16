@@ -3,6 +3,7 @@ package com.example.BusStation.service;
 import com.example.BusStation.model.Line;
 import com.example.BusStation.web.dto.LineDTO;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface LineService {
@@ -11,7 +12,7 @@ public interface LineService {
 
     List<LineDTO> getAll();
 
-    List<LineDTO> search(Long carrierId, String destination, String departure, Integer maxPrice, Integer minPrice, int pageNo);
+    List<LineDTO> search(LocalDateTime date, String destination, String departure, Integer maxPrice, Integer minPrice, int pageNo);
 
     LineDTO save(Line line);
 
