@@ -4,12 +4,15 @@ import com.example.BusStation.model.Line;
 import com.example.BusStation.service.LineService;
 import com.example.BusStation.web.dto.LineDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -21,20 +24,23 @@ public class LineController {
 
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     @GetMapping
-    public ResponseEntity<List<LineDTO>> getAll(@RequestParam(required = false) Long carrierId,
-                                                @RequestParam(required = false) String destination,
-                                                @RequestParam(required = false) String departure,
-                                                @RequestParam(required = false) Integer maxPrice,
-                                                @RequestParam(required = false) Integer minPrice,
-                                                @RequestParam(value = "pageNo", required = false, defaultValue = "0") int pageNo) {
-        if (carrierId == null
-                && (destination == null || destination.isBlank())
-                && (departure == null || departure.isBlank())
-                && maxPrice == null
-                && minPrice == null) {
+    public ResponseEntity<List<LineDTO>> getAll(
+            @RequestParam(value = "date", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime date,
+            @RequestParam(required = false) String destination,
+            @RequestParam(required = false) String departure,
+            @RequestParam(required = false) Integer maxPrice,
+            @RequestParam(required = false) Integer minPrice,
+            @RequestParam(value = "pageNo", required = false, defaultValue = "0") int pageNo
+    ) {
+        if (
+                (destination == null || destination.isBlank())
+                        && (departure == null || departure.isBlank())
+                        && maxPrice == null
+                        && minPrice == null
+                        && date == null) {
             return new ResponseEntity<>(List.of(), HttpStatus.OK);
         }
-        List<LineDTO> lines = lineService.search(carrierId, destination, departure, minPrice, maxPrice, pageNo);
+        List<LineDTO> lines = lineService.search(date, destination, departure, minPrice, maxPrice, pageNo);
         return new ResponseEntity<>(lines, HttpStatus.OK);
     }
 
