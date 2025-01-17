@@ -1,8 +1,8 @@
 import { BusStationAxios } from "./axios";
 
-const getLines = (destination, carrierId, maxPrice) => {
+const getLines = (date, destination, departure, maxPrice, minPrice) => {
   return BusStationAxios.get("/lines", {
-    params: { destination, carrierId, maxPrice },
+    params: { date, destination, departure, maxPrice, minPrice },
   });
 };
 
