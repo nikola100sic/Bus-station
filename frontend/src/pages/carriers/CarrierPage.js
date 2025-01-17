@@ -24,7 +24,7 @@ const CarrierPage = () => {
         <CarrierCard>
           <p>Carrier's name: {carrier.name}</p>
           <p>Address: {carrier.address}</p>
-          <p>E mail: {carrier.email}</p>
+          <p>E-mail: {carrier.email}</p>
           <p>Phone number: {carrier.phoneNumber}</p>
         </CarrierCard>
       ))}
