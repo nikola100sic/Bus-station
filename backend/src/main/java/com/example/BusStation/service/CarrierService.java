@@ -12,5 +12,7 @@ public interface CarrierService {
 
     Carrier save(Carrier carrier);
 
+    void delete(Long id);
+
 
 }
