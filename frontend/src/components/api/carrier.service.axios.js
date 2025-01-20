@@ -12,8 +12,13 @@ const addCarier = (newCarrier) => {
   return BusStationAxios.add(`/carriers`, newCarrier);
 };
 
+const deleteCarrier = (id) => {
+  return BusStationAxios.delete(`/carriers/${id}`);
+};
+
 export default {
   getCarrier,
   getCarriers,
   addCarier,
+  deleteCarrier,
 };
