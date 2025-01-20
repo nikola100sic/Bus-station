@@ -1,6 +1,7 @@
 package com.example.BusStation.exception;
 
 
+import com.example.BusStation.exception.carriers.CarrierNotFoundException;
 import com.example.BusStation.exception.lines.InvalidLineException;
 import com.example.BusStation.exception.lines.LineNotFoundException;
 import com.example.BusStation.exception.users.InvalidCredentialsException;
@@ -45,7 +46,12 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleInvalidLineException(InvalidLineException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
-    
+
+    @ExceptionHandler(CarrierNotFoundException.class)
+    public ResponseEntity<String> handleEntityNotFoundException(CarrierNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
     @ExceptionHandler(value = DataIntegrityViolationException.class)
     public ResponseEntity<Void> handle() {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
