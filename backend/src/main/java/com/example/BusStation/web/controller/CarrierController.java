@@ -34,4 +34,10 @@ public class CarrierController {
         Carrier saved = carrierService.save(carrier);
         return new ResponseEntity<>(saved, HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        carrierService.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
