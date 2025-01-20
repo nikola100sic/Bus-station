@@ -32,9 +32,9 @@ public class Line {
     @Column(nullable = false)
     private BigDecimal price;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "line_carrier", joinColumns = @JoinColumn(name = "line_id"),
             inverseJoinColumns = @JoinColumn(name = "carrier_id"))
     private List<Carrier> carriers;
-    
+
 }
