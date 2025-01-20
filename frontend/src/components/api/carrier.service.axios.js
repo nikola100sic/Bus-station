@@ -8,7 +8,7 @@ const getCarriers = () => {
   return BusStationAxios.get(`/carriers`);
 };
 
-const addCarier = (newCarrier) => {
+const addCarrier = (newCarrier) => {
   return BusStationAxios.add(`/carriers`, newCarrier);
 };
 
@@ -19,6 +19,6 @@ const deleteCarrier = (id) => {
 export default {
   getCarrier,
   getCarriers,
-  addCarier,
+  addCarrier,
   deleteCarrier,
 };
