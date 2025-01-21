@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import carrierServiceAxios from "../../components/api/carrier.service.axios";
-import { CarrierFormContainer } from "../../components/shared/forms/Forms.styled";
+import {
+  CarrierFormContainer,
+  CarrierFormTitle,
+} from "../../components/shared/forms/Forms.styled";
 
 const CarrierEditPage = () => {
   const routeParams = useParams();
@@ -32,7 +35,7 @@ const CarrierEditPage = () => {
 
   return (
     <CarrierFormContainer>
-      <p>Edit page</p>
+      <CarrierFormTitle>Edit page</CarrierFormTitle>
     </CarrierFormContainer>
   );
 };
