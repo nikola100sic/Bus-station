@@ -64,15 +64,4 @@ export const CarrierFormTitle = styled(AuthFormTitle)`
   color: rgb(255, 255, 255);
 `;
 
-export const CarrierFormInput = styled(AuthFormInput)`
-  width: 90%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  ::placeholder {
-    color: #888;
-    font-style: italic;
-  }
-`;
+export const CarrierFormInput = styled(AuthFormInput)``;
