@@ -56,7 +56,7 @@ export const Label = styled.span`
 `;
 
 export const CarrierFormContainer = styled(AuthFormContainer)`
-  background: rgb(216 205 24 / 35%);
+  background: rgb(255 242 27 / 26%);
 `;
 
 export const CarrierFormTitle = styled(AuthFormTitle)`
