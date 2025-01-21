@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import RegistrationPage from "./pages/auth/RegistrationPage";
 import LinePage from "./pages/lines/LinePage";
 import CarrierPage from "./pages/carriers/CarrierPage";
+import CarrierEditPage from "./pages/carriers/CarrierEditPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/lines" element={<LinePage />} />
           <Route path="/carriers" element={<CarrierPage />} />
+          <Route path="/carriers/edit/:id" element={<CarrierEditPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/registration" element={<RegistrationPage />} />
         </Routes>
