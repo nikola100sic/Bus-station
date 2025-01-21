@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import carrierServiceAxios from "../../components/api/carrier.service.axios";
 import {
   CarrierFormContainer,
+  CarrierFormInput,
   CarrierFormTitle,
+  FormLabel,
 } from "../../components/shared/forms/Forms.styled";
 
 const CarrierEditPage = () => {
@@ -36,6 +38,34 @@ const CarrierEditPage = () => {
   return (
     <CarrierFormContainer>
       <CarrierFormTitle>Edit page</CarrierFormTitle>
+      <FormLabel>Name:</FormLabel>
+      <CarrierFormInput
+        type="text"
+        placeholder="Enter carrier's name"
+        name="name"
+        value={carrier.name}
+      />
+      <FormLabel>Address:</FormLabel>
+      <CarrierFormInput
+        type="text"
+        placeholder="Enter address"
+        name="address"
+        value={carrier.address}
+      />
+      <FormLabel>Phone number:</FormLabel>
+      <CarrierFormInput
+        type="text"
+        placeholder="Enter phone number"
+        name="phonenumber"
+        value={carrier.phoneNumber}
+      />
+      <FormLabel>E mail:</FormLabel>
+      <CarrierFormInput
+        type="text"
+        placeholder="Enter carrier's e Mail"
+        name="email"
+        value={carrier.email}
+      />
     </CarrierFormContainer>
   );
 };
