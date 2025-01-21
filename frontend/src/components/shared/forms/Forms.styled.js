@@ -58,3 +58,21 @@ export const Label = styled.span`
 export const CarrierFormContainer = styled(AuthFormContainer)`
   background: rgb(216 205 24 / 35%);
 `;
+
+export const CarrierFormTitle = styled(AuthFormTitle)`
+  text-align: center;
+  color: rgb(255, 255, 255);
+`;
+
+export const CarrierFormInput = styled(AuthFormInput)`
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  ::placeholder {
+    color: #888;
+    font-style: italic;
+  }
+`;
