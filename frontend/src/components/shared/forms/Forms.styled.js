@@ -54,3 +54,7 @@ export const Label = styled.span`
   font-size: 15px;
   font-weight: bold;
 `;
+
+export const CarrierFormContainer = styled(AuthFormContainer)`
+  background: rgb(216 205 24 / 35%);
+`;
